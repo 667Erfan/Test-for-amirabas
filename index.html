@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <style>
+        /* تنظیمات پایه و پس‌زمینه متحرک */
+        body { margin: 0; background: #0a0a0a; color: white; font-family: sans-serif; overflow: hidden; }
+        #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; }
+        
+        /* افکت شیشه‌ای (Glassmorphism) */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 20px;
+            margin: 20px;
+        }
+
+        /* دکمه‌های سه‌بعدی خفن */
+        .btn-3d {
+            background: linear-gradient(145deg, #00d4ff, #005f73);
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 10px 0 #003a4a;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .btn-3d:active {
+            transform: translateY(5px);
+            box-shadow: 0 5px 0 #003a4a;
+        }
+        .btn-3d:hover { background: #00b4d8; }
+
+        /* نوار پیشرفت */
+        .progress-bar { width: 100%; height: 10px; background: #333; border-radius: 5px; overflow: hidden; }
+        .progress-fill { height: 100%; width: 70%; background: #00d4ff; animation: load 2s infinite; }
+        @keyframes load { 0% { width: 0%; } 100% { width: 100%; } }
+    </style>
+</head>
+<body>
+
+    <!-- پس‌زمینه متحرک (از کتابخانه particles.js استفاده کن) -->
+    <div id="particles-js"></div>
+
+    <div class="glass-panel">
+        <h1>Zrx Launcher 2026</h1>
+        <div class="progress-bar"><div class="progress-fill"></div></div>
+        <br>
+        <button class="btn-3d">دانلود لانچر</button>
+        <button class="btn-3d">آخرین نسخه</button>
+    </div>
+
+    <!-- اسکریپت Particles (باید فایلش را داشته باشی) -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS.load('particles-js', 'https://api.github.com/repos/VincentGarreau/particles.js/contents/demo/particles.json');
+    </script>
+</body>
+</html>
